@@ -27,3 +27,35 @@ repositorio: `https://github.com/TecnologoInformatico/AdmInf-web.git`
     "ip": ""
 }
 ```
+1.	mkdir repositorio
+	cd repositorio/
+	git clone https://github.com/TecnologoInformatico/AdmInf-web.git
+2.	sudo apt update
+3.	 sudo apt install apache2
+4.	sudo mkdir /var/www/ninthamoussu
+5.	sudo chown ubuntu: ninthamoussu
+6.	cd /etc/apache2/sites-available/
+//sudo cp 000-default.conf ninthamoussu.conf
+     sudo nano ninthamoussu.conf
+//(cambio los campos #ServerName (ninthamoussu.tecnologoinformatico.com),
+//#DocumentRoot (/var/www/ninthamoussu))
+	sudo nano ninthamoussu.conf
+	sudo nano /etc/hosts
+//(cambio localhost poner ip(en mi caso 168.138.133.31)
+//y en la ultima linea 127.0.0.1 ninthamoussu.tecnologoinformatico.com)
+	sudo a2ensite ninthamoussu.conf
+	sudo nano index.html
+	sudo systemctl reload apache2.service
+	curl 168.138.157.115 
+//no muestra bien asi xq teng otro usuario
+ y muestra al primero x defecto.
+	al hacer curl ninthamoussu.tecnologoinformatico.com
+//sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT
+//ahi si se mustra.
+Ingrese la IP del servidor y el servername a continuación:
+{
+    "serverName":  ninthamoussu.tecnologoinformatico.com "",
+    "ip":  168.138.157.115""
+}
+
+
